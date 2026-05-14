@@ -2,12 +2,19 @@
   "policies": [
     {
       "handler": {
-        "export": "MockApiInboundPolicy",
+        "export": "RequestValidationInboundPolicy",
         "module": "$import(@zuplo/runtime)",
-        "options": {}
+        "options": {
+          "includeRequestInLogs": false,
+          "logLevel": "info",
+          "validateBody": "reject-and-log",
+          "validateHeaders": "none",
+          "validatePathParameters": "reject-and-log",
+          "validateQueryParameters": "reject-and-log"
+        }
       },
-      "name": "mock-api-inbound",
-      "policyType": "mock-api-inbound"
+      "name": "validation-inbound",
+      "policyType": "request-validation-inbound"
     }
   ]
 }

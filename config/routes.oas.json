@@ -64,6 +64,9 @@
             "options": {
               "baseUrl": "https://todo.zuplo.io"
             }
+          },
+          "policies": {
+            "inbound": ["validation-inbound"]
           }
         },
         "tags": ["Todo"]
@@ -131,7 +134,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "format": "int32"
             },
             "description": "The todo ID"
           }
@@ -184,6 +188,9 @@
             "options": {
               "baseUrl": "https://todo.zuplo.io"
             }
+          },
+          "policies": {
+            "inbound": ["validation-inbound"]
           }
         },
         "tags": ["Todo"]
@@ -251,6 +258,7 @@
           },
           "userId": {
             "type": "integer",
+            "format": "int64",
             "description": "The user ID who owns the todo"
           }
         },
