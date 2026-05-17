@@ -134,8 +134,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string",
+              "format": "guid"
             },
             "description": "The todo ID"
           }
@@ -298,6 +298,7 @@
           },
           "userId": {
             "type": "integer",
+            "format": "int64",
             "description": "The user ID who owns the todo"
           }
         }
